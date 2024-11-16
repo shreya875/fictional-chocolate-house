@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Manage Inventory</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Ingredient Inventory</h1>
+    <form method="POST">
+        <label>Ingredient:</label><input type="text" name="ingredient_name" required><br>
+        <label>Quantity:</label><input type="number" name="quantity" required><br>
+        <input type="submit" value="Add Ingredient">
+    </form>
+
+    <h2>Current Ingredients</h2>
+    <ul>
+        {% for ingredient in ingredients %}
+            <li>{{ ingredient[1] }} - Quantity: {{ ingredient[2] }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

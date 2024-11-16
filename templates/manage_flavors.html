@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Manage Flavors</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Seasonal Flavors</h1>
+    <form method="POST">
+        <label>Flavor Name:</label><input type="text" name="flavor_name" required><br>
+        <label>Available Until:</label><input type="date" name="available_until" required><br>
+        <input type="submit" value="Add Flavor">
+    </form>
+
+    <h2>Current Seasonal Flavors</h2>
+    <ul>
+        {% for flavor in flavors %}
+            <li>{{ flavor[1] }} - Available until {{ flavor[2] }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
